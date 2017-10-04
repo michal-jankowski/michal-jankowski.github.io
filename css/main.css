@@ -1,0 +1,781 @@
+/***********************************************************
+BASE.CSS file
+***********************************************************/
+*,
+*:after,
+*:before {
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+/* artykuł wyjasniający poniższy zestaw styli (zastępujący reset.css czy normalize.css): 'http://jaydenseric.com/blog/forget-normalize-or-resets-lay-your-own-css-foundation') */
+
+html {
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    margin: 0;
+    font: 16px sans-serif; /* tutaj zastanowić się nad większą wartością line-height, ok. 1.55 (sprawdź na: 'https://www.gridlover.net/') - zastanowić się w ogóle czy ustawiać line-height, bo wcześniejsze ustawienie 16px/1 spodowało mi, dziwne wyświetlanie się linku w tagu <h1> (link był wyższy niż nagłówek w którym link się znajdował...?) */
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Only specify elements that exist or can be in your project */
+h1,
+h2,
+h3,
+h4,
+p,
+blockquote,
+figure,
+ol,
+ul,
+dl,
+dt,
+dd,
+textarea {
+    margin: 0;
+    padding: 0;
+}
+
+main,
+li {
+    display: block; /* It gets rid of the little bullets and numbers from list items and fix the <main> tag that could be unsupported */
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-size: inherit; /* Headings will inherit the same size as the surrounding text by default and not some arbitrary larger size */
+}
+
+input {
+    border: none;
+}
+
+strong {
+    font-weight: bold;
+}
+
+
+/*****************************************
+to może do oddzielnego pliku z buttonami
+*****************************************/
+
+a,
+button {
+    color: inherit;
+    transition: .3s; /* zastanowić się czy takiego defaultowego przejścia nie dać dla wszystkich selektorów (jak w DevTips na selektorze '*' */
+}
+
+a {
+    text-decoration: none;
+}
+
+button {
+    overflow: visible;
+    border: 0;
+    font: inherit;
+    -webkit-font-smoothing: inherit;
+    letter-spacing: inherit;
+    background: none;
+    cursor: pointer;
+}
+
+button {
+    overflow: visible; /* brings IE into line ??? (że jaki błąd?) */
+    border: 0;
+    font: inherit;
+    -webkit-font-smoothing: inherit; /* rule fixes buggy inheritance ??? (jakie bugi?) */
+    letter-spacing: inherit;
+    background: none;
+    cursor: pointer;
+}
+
+::-moz-focus-inner { /* Bug 140562 - Replace -moz-focus-inner from form elements with standard outline */
+    padding: 0;
+    border: 0;
+}
+
+
+/*****************************************
+responsive and media queries breakpoints
+*****************************************/
+
+img {
+    max-width: 100%;
+    height: auto;
+    border: 0; /* fixes images within links gaining a border in IE 8, 9 and 10 */
+}
+
+/*  xs - Extra small devices (portrait phones, less than 576px) - default */
+/*  sm - Small devices (landscape phones, 576px and up) */
+/*  md - Medium devices (tablets, 768px and up) */
+/*  lg - Large devices (desktops, 992px and up) */
+/*  xl - Extra large devices (large desktops, 1200px and up) */
+
+@media (max-width: 575px) {
+    .hidden-xs-down {
+        display: none !important;
+    }
+}
+
+@media (max-width: 767px) {
+    .hidden-sm-down {
+        display: none !important;
+    }
+}
+
+@media (max-width: 991px) {
+    .hidden-md-down {
+        display: none !important;
+    }
+}
+
+@media (max-width: 1199px) {
+    .hidden-lg-down {
+        display: none !important;
+    }
+}
+
+.hidden-xl-down {
+    display: none !important;
+}
+
+/************ ***************/
+
+.hidden-xs-up {
+    display: none !important;
+}
+
+@media (min-width: 576px) {
+    .hidden-sm-up {
+        display: none !important;
+    }
+}
+
+@media (min-width: 768px) {
+    .hidden-md-up {
+        display: none !important;
+    }
+}
+
+@media (min-width: 992px) {
+    .hidden-lg-up {
+        display: none !important;
+    }
+}
+
+@media (min-width: 1200px) {
+    .hidden-xl-up {
+        display: none !important;
+    }
+}
+
+
+/*****************************************
+utilities
+*****************************************/
+.screen-reader-only { /* sprawdzić czy jest lepszy sposób na wyświetlanie treści dla czytników, link do artykułu z obecnym rozwiązaniem: 'http://webaim.org/techniques/css/invisiblecontent/' */
+	position:absolute;
+	left:-10000px;
+	top:auto;
+	width:1px;
+	height:1px;
+	overflow:hidden;
+}
+
+.icon::before { /* link do rozwiązania: 'https://dusted.codes/making-font-awesome-awesome-using-icons-without-i-tags' */
+    display: inline-block;
+    margin-right: .5em;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transform: translate(0, 0);
+    color: #ffa000;
+}
+
+.btn {
+    position: relative;
+    padding: 0.8em 3.5em;
+    background: #ffa000;
+    border-radius: 1.3em;
+    color: white;
+    font-size: 1rem;
+    min-width: 200px;
+    text-align: center;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.btn_center-align {
+    position: relative;
+    display: inline-block;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+
+/***********************************************************
+STYLE.CSS file
+***********************************************************/
+body {
+    font-family: 'PT Sans', sans-serif;
+    color: #525252;
+    font-size: 16px;
+    overflow-x: hidden;
+}
+
+.page-wrapper {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    min-height: 100%;
+}
+
+.btn {
+    box-shadow: 0 6px 5px -5px #aaaaaa;
+}
+
+
+/*****************************************
+header
+*****************************************/
+
+.header-top {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 1em 4% 0.8em;
+    height: 90px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #e4e4e4;
+    background: #ffffff;
+    box-shadow: 0 5px 6px -6px #aaaaaa;
+    z-index: 100;
+
+    -webkit-transition: background-color 500ms cubic-bezier(0.250, 0.100, 0.250, 1.000);
+    -moz-transition: background-color 500ms cubic-bezier(0.250, 0.100, 0.250, 1.000);
+    -o-transition: background-color 500ms cubic-bezier(0.250, 0.100, 0.250, 1.000);
+    transition: background-color 500ms cubic-bezier(0.250, 0.100, 0.250, 1.000); /* ease (default) */
+}
+
+.header-top__logo {
+    font-size: 1.875rem;
+    color: #3f4b5a;
+}
+
+.header-top__logo_small {
+    display: block;
+    font-size: 1.1rem;
+}
+
+.header-top__contact-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.header-top_sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 99;
+    background: #f1f2f6;
+}
+
+.nav {
+    padding: 1em 4%;
+}
+
+.nav__item {
+    display: inline-block;
+}
+
+.nav__link {
+    padding: 15px 2em;
+    font-size: 17px;
+    font-weight: bold;
+}
+
+.nav__link:hover {
+    color: #ffa000;
+}
+
+.nav-sticky {
+    margin-top: 0 !important;
+    padding: 0;
+}
+
+.nav-sticky a {
+    padding: 20px;
+}
+
+/* MEDIA QUERIES */
+@media screen and (min-width: 768px) {
+    .nav {
+        margin-top: 90px;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .nav-sticky a {
+        padding: 30px;
+    }
+}
+
+
+/*****************************************
+hero section _ header
+*****************************************/
+
+.hero-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 550px;
+    max-height: 650px;
+    background: #f1f2f6;
+}
+
+.hero-section__image {
+    width: 100%;
+}
+
+.hero-section__title {
+    padding: 0 4%;
+}
+
+.hero-section__title {
+    font-size: 2.5rem;
+    color: #3f4b5a;
+    font-weight: bold;
+}
+
+.hero-section__title_small {
+    display: block;
+    font-size: 1.3rem;
+}
+
+.hero-section__btn {
+    margin-top: 1.9em;
+    margin-left: 4%;
+    align-self: flex-start;
+}
+
+/* MEDIA QUERIES */
+@media screen and (max-width: 767px) {
+    .hero-section {
+        margin-top: 90px;
+    }
+}
+
+
+/*****************************************
+section
+*****************************************/
+
+.section {
+    padding: 7em 4% 0;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+.header__title,
+.header__subtitle {
+    text-align: left;
+}
+
+.header__title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 0.5em;
+}
+
+.text-block {
+    margin: 0 auto;
+}
+
+.header__subtitle {
+    font-size: 1.1rem;
+    font-weight: bold;
+    max-width: 550px;
+}
+
+.header__line {
+    width: 30px;
+    height: 3px;
+    background: #ffa000;
+    margin-top: 1.5em;
+    margin-bottom: 2.5em;
+}
+
+.text-block {
+    text-align: left;
+}
+
+.text-block__paragraph {
+    margin-bottom: 1.5em;
+}
+
+.text-block__paragraph_last {
+    margin-bottom: 0;
+}
+
+.ghost-element {
+    height: 90px;
+}
+
+
+/*****************************************
+contact section
+*****************************************/
+
+.contact-section__header-top {
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+.contact-section__inner {
+    background: #ffffff;
+}
+
+.contact-section__content {
+    background: #ffffff;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.contact-section__contact-header {
+    align-items: center;
+    height: 27px;
+    margin-left: 5px;
+}
+
+.contact-section__contact-header:not(:first-child) {
+    margin-top: 1.2em;
+}
+
+.contact-section__contact-title {
+    text-transform: uppercase;
+    font-size: 1.05rem;
+    display: inline-block;
+}
+
+.contact-section__icon:before {
+    font-size: 1.5rem;
+    text-align: center;
+    width: 24px;
+    margin-right: 12px;
+}
+
+.contact-section__text {
+    display: block;
+    margin-left: 41px; /* icon width 24px + icon:before margin-right 12px + 5px (contact-form__field margin-left) = 41px */
+}
+
+.contact-form__header {
+    text-transform: uppercase;
+    font-size: 1.05rem;
+    margin: 2.6em 0 0.5em 5px;
+}
+
+.contact-form__content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.contact-form__field {
+    margin: 5px;
+    padding: 1em;
+    border: 1px solid #e8e8e8;
+    min-width: 200px;
+    background-color: #f9f9f9;
+    font-size: 0.875rem;
+    font-family: 'PT Sans', sans-serif;
+}
+
+.contact-form__field_half {
+    flex: 1 0 48%;
+}
+
+.contact-form__field_full {
+    width: 100%;
+}
+
+.contact-form__textarea {
+    min-height: 150px;
+    margin-bottom: 10px;
+}
+
+.contact-form__map {
+    width: calc(100% - 10px);
+    height: 300px; /* tak na początek wysokość 250px */
+    margin: 1.2em 0 0.5em 5px;
+}
+
+.offer-section__btn {
+    margin-top: 2.5em;
+}
+
+
+/*****************************************
+backToTop button
+*****************************************/
+.backToTop {
+    padding: 0.8em 2em;
+    border: none;
+    border-radius: 1.3em;
+    background: #ffbc4c;
+    opacity: 1;
+    -webkit-transition: visibility 0.2s, opacity 0.2s;
+    transition: visibility 0.2s, opacity 0.2s;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    cursor: pointer;
+    color: #ffffff;
+    z-index: 98;
+}
+
+.backToTop:hover {
+    background: #ffa000;
+}
+
+.backToTop.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+
+/***********************************************************
+MOBILE-MENU.CSS file
+***********************************************************/
+/* mobile menu 'Off-Canvas Navigation' based on https://tympanus.net/codrops/2013/08/28/transitions-for-off-canvas-navigations/ */
+/* CSS hamburger icon animation based on https://jonsuh.com/hamburgers/ */
+
+@media (max-width: 767px) {
+	.mobile-menu {
+	    position: absolute;
+  		width: 80%;
+	}
+
+	.mobile-menu__logo {
+		padding: 0 4%;
+	    font-size: 1.875rem;
+	    color: #3f4b5a;
+	}
+
+	.mobile-menu__logo_small {
+	    display: block;
+	    font-size: 1.1rem;
+	}
+
+    .mobile-menu__icon {
+    	width: 40px;
+		height: 24px;
+		position: relative;
+		cursor: pointer;
+    }
+
+    .mobile-menu__icon span,
+    .mobile-menu__icon span:before,
+    .mobile-menu__icon span:after {
+    	display: block;
+    	content: "";
+		position: absolute;
+		height: 5px;
+		width: 100%;
+		opacity: 1;
+		background: #ffa000;
+		-webkit-transform: rotate(0deg);
+		-moz-transform: rotate(0deg);
+		-o-transform: rotate(0deg);
+		transform: rotate(0deg);
+		-webkit-transition: 0.25s ease-in-out;
+		-moz-transition: 0.25s ease-in-out;
+		-o-transition: 0.25s ease-in-out;
+		transition: 0.25s ease-in-out;
+    }
+
+    .mobile-menu__icon span:before {
+    	top: 10px;
+    }
+
+    .mobile-menu__icon span:after {
+    	top: 20px
+    }
+
+    .mobile-menu__icon_open span {
+    	transform: translate3d(0,10px,0) rotate(45deg);
+    }
+
+    .mobile-menu__icon_open span:before {
+    	width: 0%;
+ 		opacity: 0;
+    }
+
+    .mobile-menu__icon_open span:after {
+    	transform: translate3d(0,-20px,0) rotate(-90deg);
+    }
+
+    .mobile-menu__nav {
+    	margin-top: 2em;
+    }
+
+    .mobile-menu__link {
+	    display: block;
+	    padding: 0.8em 4%;
+	    font-size: 1rem;
+	    box-shadow: inset 0 -1px rgba(0,0,0,0.2);
+	    -webkit-transition: background 0.3s, box-shadow 0.3s;
+	    transition: background 0.3s, box-shadow 0.3s;
+	}
+
+	.mobile-menu__link_first {
+    	box-shadow: inset 0 -1px rgba(0,0,0,0.2), inset 0 1px rgba(0,0,0,0.2);
+    }
+}
+
+/* The side navigation menu */
+.sidenav {
+    height: 100%; /* 100% Full-height */
+    width: 0; /* 0 width - change this with JavaScript */
+    position: fixed; /* Stay in place */
+    z-index: 101; /* Stay on top */
+    top: 0;
+    left: 0;
+    background-color: #f1f2f6;
+	overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 6em; /* Place content 60px from the top */
+    transition: 0.3s; /* 0.5 second transition effect to slide in the sidenav */
+}
+
+/* The navigation menu links */
+.sidenav a {
+    padding: 8px;
+    text-decoration: none;
+	font-size: 25px;
+	font-weight: bold;
+	text-align: center;
+    color: #3f4b5a;
+	display: block;
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidenav a:hover {
+	color: #ffa000;
+}
+
+/* Position and style the close button (top right corner) */
+.sidenav .closebtn {
+    position: absolute;
+    top: 17px;
+    right: 3%;
+    line-height: 40px;
+    font-size: 73px;
+    margin-left: 50px;
+}
+
+
+/***********************************************************
+BASE.CSS file
+***********************************************************/
+/* Accordion element based on: https://codepen.io/abergin/pen/ihlDf?editors=1100 */
+
+.accordion-element__content, 
+.accordion-element__icon:before, 
+.accordion-element__icon:after {
+    transition: all 0.25s ease-in-out;
+}
+
+.accordion-element {
+	position: relative;
+}
+
+.accordion-element__checkbox {
+	margin: 0;
+	position: absolute;
+	cursor: pointer;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+	opacity: 0;
+}
+
+.accordion-element__title {
+	padding: 1em 0;
+	border-bottom: 1px solid rgba(0,0,0,0.2);
+	text-transform: uppercase;
+	text-align: left;
+	cursor: pointer;
+}
+
+.accordion-element__icon {
+	position: absolute;
+	transform: translate(-1em, 0);
+    margin-top: 1.3em;
+	right: 0;
+}
+
+.accordion-element__icon:before,
+.accordion-element__icon:after {
+	position: absolute;
+	display: block;
+	content: "";
+    background: #ffa000;
+    width: 3px;
+    height: 9px;
+}
+
+.accordion-element__icon:before {
+	transform: translate(-2px, 0) rotate(45deg);
+}
+
+.accordion-element__icon:after {
+	transform: translate(2px, 0) rotate(-45deg);
+}
+
+.accordion-element__checkbox:checked ~ .accordion-element__icon:before {
+	transform: translate(2px, 0) rotate(45deg);
+}
+
+.accordion-element__checkbox:checked ~ .accordion-element__icon:after {
+	transform: translate(-2px, 0) rotate(-45deg);
+}
+
+.accordion-element__content {
+	text-align: left;
+}
+
+.accordion-element__text {
+	margin-top: 0.7em;
+}
+
+.accordion-element__text:last-child {
+	margin-bottom: 2em;
+}
+
+.accordion-element__list-title {
+	font-weight: bold;
+}
+
+.accordion-element__list-item {
+	display: list-item;
+	list-style-type: decimal;
+	margin-left: 26px;
+}
+
+.accordion-element__checkbox:checked ~ .accordion-element__content {
+	/*max-height: 0;
+	opacity: 0;
+    transform: translate(0, 50%);*/ /* tutaj trzeba pokombinować z transform i transition, żeby to dobrze wyglądało */
+	display: none;
+}

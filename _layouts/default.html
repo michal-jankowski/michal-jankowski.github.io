@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: "pl" }}">
+
+  {% include head.html %}
+
+  <body>
+
+    {% include header.html %}
+
+    <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+    <!-- zastanowić się czy nie będę potrzebował fallbacku dla IE 8 - wtedy HTML5Shiv dla nowych elementów HTML5!!! -->
+    <!-- https://github.com/aFarkas/html5shiv -->
+
+    <!-- zastanowić się nad znacznikiem <main> albo atrybutem role="main" - doczytać co to semantycznie daje i oznacza -->
+
+    <main class="page-content" aria-label="Content">
+      <div id="pageTop" class="wrapper page-wrapper">
+        {{ content }}
+      </div>
+    </main>
+
+    {% include footer.html %}
+
+    {% include scripts.html %}
+
+  </body>
+
+</html>

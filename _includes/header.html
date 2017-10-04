@@ -1,0 +1,63 @@
+<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a data-scroll href="#aboutSection">O Firmie</a>
+  <a data-scroll href="#offerSection">Oferta</a>
+  <a data-scroll href="#pricingSection">Cennik</a>
+  <a data-scroll href="#contactSection">Kontakt</a>
+</div>
+
+<header class="header">
+  <div class="header-top">
+    <h1 class="header-top__logo">
+      <a data-scroll href="#pageTop">Usługi Księgowe
+                        <span class="header-top__logo_small">Krystyna Szymczak</span>
+                    </a>
+    </h1>
+
+    <h2 class="screen-reader-only">Nawigacja strony</h2>
+    <nav class="hidden-sm-down">
+      <ul class="nav nav-sticky">
+        <li class="nav__item">
+          <a data-scroll href="#aboutSection" class="nav__link">O Firmie</a>
+        </li>
+        <li class="nav__item">
+          <a data-scroll href="#offerSection" class="nav__link">Oferta</a>
+        </li>
+        <li class="nav__item">
+          <a data-scroll href="#pricingSection" class="nav__link">Cennik</a>
+        </li>
+        <li class="nav__item">
+          <a data-scroll href="#contactSection" class="nav__link">Kontakt</a>
+        </li>
+      </ul>
+    </nav>
+
+    <section class="hidden-md-down header-top__contact-info">
+      <h2>Kontakt z biurem</h2>
+      <!-- tylko dla czytników i outline'u dokumentu, czy może jednak (np. dla komórek), zostawić ten nagłówek? -->
+
+      <!-- TODO dane kontaktowe zgodnie z semantyką + MICRODATA zgodnie z zaleceniami Google!!! -->
+      <!-- może zarówno do godzin otwarcia jak i numeru telefonu dodać element span (widoczny tylko dla czytników), że są to tego typu informacje -->
+      <span class="icon fa-clock-o">Pon. - Pt 9:00 - 17:00</span>
+      <!-- dla czytników oznaczenie, że są to godziny otwarcia biura (może jakiś 'aria-label'?) -->
+      <span><a class="icon fa-phone" href="tel:+48507625453">507-625-453</a></span>
+      <!-- jw -->
+    </section>
+
+    <div class="hidden-md-up mobile-menu__icon" onclick="openNav()">
+      <span></span>
+    </div>
+  </div>
+
+  <!-- w jakiś sposób zamieścić informacje dla czytników, że jest to tylko taki element reklamowy ze zdjęciem -->
+  <figure class="hero-section">
+    <!-- poczytać jeszcze o tym znaczniku figure -->
+    <img src="" alt="Usługi Księgowe Krystyna Szymczak - zdjęcie reklamowe" class="hero-section__image">
+    <!-- wartość atrybutu alt - jeszcze do przemyślenia -->
+    <figcaption class="hero-section__title">Usługi Księgowe
+      <span class="hero-section__title_small">Warszawa Wesoła <br>Stara Miłosna</span></figcaption>
+    <!-- zastanowić się czy ten element z adresem da się jakoś wyróżnić pod SEO albo czy nie zrobić z niego nagłówka i wyjąć go z elementu <figure> -->
+    <a data-scroll href="#offerSection" class="btn hero-section__btn">Oferta</a>
+    <!-- element ma być niewidoczny dla czytników -->
+  </figure>
+</header>

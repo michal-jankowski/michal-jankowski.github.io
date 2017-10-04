@@ -1,0 +1,27 @@
+<script>
+    /* Open the sidenav */
+    function openNav() {
+        document.getElementById("mySidenav").style.width = "100%";
+    }
+
+    /* Close/hide the sidenav */
+    function closeNav() {
+        document.getElementById("mySidenav").style.width = "0";
+    }
+</script>
+
+<!--co do tego klucza API, to sprawdzić potem jeszcze, czy na pewno jest dobrze wygenerowany -->
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCHoY0qGCraOF0lUxjOSLQpjEeVij4jZnI"></script>
+
+<script rel="stylesheet" src="{{ "/js/google-maps.js" | relative_url }}"></script>
+<script rel="stylesheet" src="{{ "/js/sticky-navigation.js" | relative_url }}"></script>
+<script rel="stylesheet" src="{{ "/js/smooth-scroll.polyfills.min.js" | relative_url }}"></script>
+
+<script>
+        var scroll = new SmoothScroll('a[href*="#"]', {
+            sideNav: document.getElementById("mySidenav"),
+            before: function () {
+                this.sideNav.style.width = "0";
+            }
+        });
+</script>
