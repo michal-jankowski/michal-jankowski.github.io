@@ -10,12 +10,13 @@
     }
 </script>
 
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <!--co do tego klucza API, to sprawdzić potem jeszcze, czy na pewno jest dobrze wygenerowany -->
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCHoY0qGCraOF0lUxjOSLQpjEeVij4jZnI"></script>
 
-<script rel="stylesheet" src="{{ "/js/google-maps.js" | relative_url }}"></script>
-<script rel="stylesheet" src="{{ "/js/sticky-navigation.js" | relative_url }}"></script>
-<script rel="stylesheet" src="{{ "/js/smooth-scroll.polyfills.min.js" | relative_url }}"></script>
+<script src="{{ "/js/google-maps.js" | relative_url }}"></script>
+<script src="{{ "/js/sticky-navigation.js" | relative_url }}"></script>
+<script src="{{ "/js/smooth-scroll.polyfills.min.js" | relative_url }}"></script>
 
 <script>
         var scroll = new SmoothScroll('a[href*="#"]', {
@@ -24,4 +25,18 @@
                 this.sideNav.style.width = "0";
             }
         });
+</script>
+
+<script>
+    var contactform =  document.getElementById('formaction');
+    contactform.setAttribute('action', '//formspree.io/' + 'michaljankowski86' + '@' + 'gmail' + '.' + 'com');
+</script>
+
+<script>
+    var previousURL = document.referrer;
+    if (previousURL === "http://formspree.io/michaljankowski86@gmail.com" && performance.navigation.type !== 1) {
+        window.onload = function () {
+            swal("Dziękujemy za wysłanie wiadomości.");
+        }
+    }
 </script>

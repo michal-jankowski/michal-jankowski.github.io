@@ -159,7 +159,7 @@ layout: home
         <!-- zastanowić się czy tutaj div czy jakiś inny znacznik, np. section lub figure dla mapki -->
     </section>
 
-    <form method="POST" action="http://formspree.io/michaljankowski86@gmail.com" class="contact-form">
+    <form id="formaction" method="POST" class="contact-form">
         <h3 class="contact-form__header">Formularz kontaktowy</h3>
 
         <div class="contact-form__content">
@@ -187,7 +187,10 @@ layout: home
                 required></textarea>
             <!-- może jakaś mała walidacja, np. na minimalną liczbę znaków, ze spersonalizowanym komunikatem w razie niepowodzenia walidacji -->
         </div>
-
+        
+        <input type="text" name="_gotcha" style="display:none" />
+        <input type="hidden" name="_next" value="//127.0.0.1:4000/" />
+        <input type="hidden" name="_language" value="pl" />
         <input class="btn" type="submit" value="Wyślij">
     </form>
 </section>
