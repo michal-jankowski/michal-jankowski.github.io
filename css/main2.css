@@ -291,7 +291,14 @@ header
 }
 
 .nav {
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
     padding: 1em 4%;
+    top: 36px;
+    left: 0;
+    right: 0;
+    text-align: center;
 }
 
 .nav__item {
@@ -321,6 +328,12 @@ header
 @media screen and (min-width: 768px) {
     .nav {
         margin-top: 90px;
+    }
+}
+
+@media screen and (max-width: 1199px) {
+    .nav {
+        position: static;
     }
 }
 
