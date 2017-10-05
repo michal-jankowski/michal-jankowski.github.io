@@ -68,7 +68,7 @@ to może do oddzielnego pliku z buttonami
 a,
 button {
     color: inherit;
-    transition: .3s; /* zastanowić się czy takiego defaultowego przejścia nie dać dla wszystkich selektorów (jak w DevTips na selektorze '*' */
+    transition: 0.3s; /* zastanowić się czy takiego defaultowego przejścia nie dać dla wszystkich selektorów (jak w DevTips na selektorze '*' */
 }
 
 a {
@@ -333,7 +333,7 @@ header
 
 @media screen and (max-width: 1199px) {
     .nav {
-        position: static;
+        position: initial;
     }
 }
 
@@ -542,7 +542,7 @@ contact section
 /*****************************************
 backToTop button
 *****************************************/
-.backToTop {
+/* .backToTop {
     padding: 0.8em 2em;
     border: none;
     border-radius: 1.3em;
@@ -565,7 +565,7 @@ backToTop button
 .backToTop.hidden {
     opacity: 0;
     visibility: hidden;
-}
+} */
 
 
 /***********************************************************
@@ -729,6 +729,20 @@ BASE.CSS file
 	text-transform: uppercase;
 	text-align: left;
 	cursor: pointer;
+}
+
+.accordion-element .accordion-element__title {
+    color: inherit;
+    -webkit-transition: color 0.3s;
+    transition: color 0.3s;
+}
+
+.accordion-element:hover .accordion-element__title {
+    color: #ffa000;
+}
+
+.accordion-element__checkbox:not(:checked) ~ .accordion-element__title {
+    color: #ffa000;
 }
 
 .accordion-element__icon {
