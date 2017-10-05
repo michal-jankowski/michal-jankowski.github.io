@@ -3,7 +3,7 @@
 
   {% include head.html %}
 
-  <body>
+  <body id="pageTop">
 
     {% include header.html %}
 
@@ -17,7 +17,7 @@
     <!-- zastanowić się nad znacznikiem <main> albo atrybutem role="main" - doczytać co to semantycznie daje i oznacza -->
 
     <main class="page-content" aria-label="Content">
-      <div id="pageTop" class="wrapper page-wrapper">
+      <div class="wrapper page-wrapper">
         {{ content }}
       </div>
     </main>
