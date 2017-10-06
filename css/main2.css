@@ -323,7 +323,8 @@ header
 
 /* MEDIA QUERIES */
 @media screen and (min-width: 768px) {
-    .nav {
+    .nav,
+    .hero-section__image-container {
         margin-top: 90px;
     }
 }
@@ -346,16 +347,19 @@ hero section _ header
 *****************************************/
 
 .hero-section {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
     min-height: 550px;
     max-height: 650px;
     background: #f1f2f6;
 }
 
+.hero-section__image-container {
+    text-align: center;
+}
+
 .hero-section__image {
-    width: 100%;
+    width: 90%;
+    max-height: 300px;
+    margin: 20px 0;
 }
 
 .hero-section__title {
@@ -374,15 +378,26 @@ hero section _ header
 }
 
 .hero-section__btn {
-    margin-top: 1.9em;
     margin-left: 4%;
-    align-self: flex-start;
+    top: 20px;
 }
 
 /* MEDIA QUERIES */
 @media screen and (max-width: 767px) {
     .hero-section {
         margin-top: 90px;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .hero-section__image {
+        min-height: 400px;
+    }
+
+    .hero-section__title,
+    .hero-section__btn {
+        position: relative;
+        margin-top: -100px;
     }
 }
 
