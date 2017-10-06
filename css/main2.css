@@ -388,6 +388,10 @@ hero section _ header
     .hero-section {
         margin-top: 90px;
     }
+
+    .hero-section__btn {
+        top: 25px;
+    }
 }
 
 @media screen and (min-width: 992px) {
