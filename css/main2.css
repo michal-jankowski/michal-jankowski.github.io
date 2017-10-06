@@ -379,7 +379,8 @@ hero section _ header
 
 .hero-section__btn {
     margin-left: 4%;
-    top: 20px;
+    top: 10px;
+    display: inline-block;
 }
 
 /* MEDIA QUERIES */
@@ -548,6 +549,25 @@ contact section
 
 .offer-section__btn {
     margin-top: 2.5em;
+}
+
+.btn-form {
+    top: 5px;
+}
+
+
+/***********************************************************
+footer
+***********************************************************/
+
+.footer {
+    margin-top: 7em;
+    background: #2c3035;
+    color: #6b6b6b;
+}
+
+.footer-content {
+    padding: 20px 4%;
 }
 
 
@@ -808,7 +828,7 @@ BASE.CSS file
 
 .accordion-element__list-item {
 	display: list-item;
-	list-style-type: decimal;
+	list-style-type: disc;
 	margin-left: 26px;
 }
 
@@ -817,21 +837,6 @@ BASE.CSS file
 	opacity: 0;
     transform: translate(0, 50%);*/ /* tutaj trzeba pokombinować z transform i transition, żeby to dobrze wyglądało */
 	display: none;
-}
-
-
-/***********************************************************
-footer
-***********************************************************/
-
-.footer {
-    margin-top: 7em;
-    background: #2c3035;
-    color: #6b6b6b;
-}
-
-.footer-content {
-    padding: 20px 4%;
 }
 
 
