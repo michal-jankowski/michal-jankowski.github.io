@@ -110,12 +110,122 @@ layout: home
     <!-- dobrze jakby czytniki tego nie czytały ;) -->
 
     <div class="text-block">
-        <p class="text-block__paragraph">Wycena usług księgowych opiera się na indywidualnych negocjacjach.</p>
-        <p class="text-block__paragraph">Ceny za usługi ustalane są z każdym klientem indywidualnie w zależności od rodzaju działalności, formy opodatkowania
-            (księgi handlowe, książka przychodów i rozchodów, ryczałt ewidencjonowany), liczby dokumentów do księgowania
-            oraz ilości pracowników. Jednocześnie zapewniam, iż ustalona z Państwem cena będzie z pewnością satysfakcjonująca.</p>
-        <p class="text-block__paragraph">Zachęcam zatem do skorzystania z formularza w zakładce Kontakt i złożenia niezobowiązującego zapytania ofertowego.
-        </p>
+        <p class="text-block__paragraph">Ceny za usługi uzależnione są od rodzaju działalności, formy opodatkowania (księgi handlowe, książka przychodów i rozchodów, ryczałt ewidencjonowany), liczby dokumentów do księgowania oraz ilości pracowników.</p>
+        <p class="text-block__paragraph">Orientacyjny cennik miesięcznej obsługi księgowej w cenach netto:</p>
+
+        <section class="pricing-section-noVAT">
+            <h3 class="screen-reader-only">Cennik - podatnik zwolniony z VAT</h3>
+            <table class="pricing-table-noVAT">
+                <caption>Podatnik zwolniony z VAT</caption>
+                <thead>
+                    <tr>
+                        <th>Ilość dok.</th>
+                        <th>Ryczałt</th>
+                        <th>Książka przych. i rozch.</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>do 10</td>
+                        <td>80</td>
+                        <td>90</td>
+                    </tr>
+                    <tr>
+                        <td>11-25</td>
+                        <td>100</td>
+                        <td>120</td>
+                    </tr>
+                    <tr>
+                        <td>26-50</td>
+                        <td>150</td>
+                        <td>250</td>
+                    </tr>
+                    <tr>
+                        <td>51-100</td>
+                        <td>300</td>
+                        <td>350</td>
+                    </tr>
+                    <tr>
+                        <td>101-150</td>
+                        <td>400</td>
+                        <td>450</td>
+                    </tr>
+                    <tr>
+                        <td>151-200</td>
+                        <td>450</td>
+                        <td>500</td>
+                    </tr>
+                    <tr>
+                        <td>pow. 200</td>
+                        <td>uzg.indyw.</td>
+                        <td>uzg.indyw.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section class="pricing-section-VAT">
+            <h3 class="screen-reader-only">Cennik - płatnik VAT</h3>
+            <table class="pricing-table-VAT">
+                <caption>Płatnik VAT</caption>
+                <thead>
+                    <tr>
+                        <th>Ilość dok.</th>
+                        <th>Ryczałt</th>
+                        <th>Książka przych. i rozch.</th>
+                        <th>Księgi rachunkowe</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>do 10</td>
+                        <td>100</td>
+                        <td>120</td>
+                        <td>350</td>
+                    </tr>
+                    <tr>
+                        <td>11-25</td>
+                        <td>130</td>
+                        <td>250</td>
+                        <td>400</td>
+                    </tr>
+                    <tr>
+                        <td>26-50</td>
+                        <td>250</td>
+                        <td>350</td>
+                        <td>700</td>
+                    </tr>
+                    <tr>
+                        <td>51-100</td>
+                        <td>400</td>
+                        <td>500</td>
+                        <td>1000</td>
+                    </tr>
+                    <tr>
+                        <td>101-150</td>
+                        <td>500</td>
+                        <td>650</td>
+                        <td>1400</td>
+                    </tr>
+                    <tr>
+                        <td>151-200</td>
+                        <td>550</td>
+                        <td>800</td>
+                        <td>1800</td>
+                    </tr>
+                    <tr>
+                        <td>pow. 200</td>
+                        <td>uzg.indyw.</td>
+                        <td>uzg.indyw.</td>
+                        <td>uzg.indyw.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <p class="text-block__paragraph">Wycena usług księgowych ostatecznie opiera się na indywidualnych negocjacjach.</p>
+        <p class="text-block__paragraph">Jednocześnie zapewniam, iż ustalona z Państwem cena będzie z pewnością satysfakcjonująca.</p>
+        <p class="text-block__paragraph">Zachęcam do skorzystania z formularza w zakładce Kontakt i złożenia niezobowiązującego zapytania ofertowego.</p>
     </div>
 </section>
 
@@ -126,12 +236,48 @@ layout: home
     </div>
     <!-- dobrze jakby czytniki tego nie czytały ;) -->
 
-    <!-- UWAGA!!! - sprawdzić czy poniższe dane teleadresowe nie powinny być w znaczniku <address> -->
-    <!-- UWAGA!!! - zastanowić się nad zmianą układu graficznego dla części sekcji z danymi teleadresowymi -->
+    <form id="formaction" method="POST" class="contact-form">
+        <h3 class="contact-form__header">Formularz kontaktowy</h3>
 
+        <div class="contact-form__content">
+            <label for="fullName" class="screen-reader-only">Imię i nazwisko</label>
+            <!-- widoczne tylko dla czytników (hmmm... ale czy to najlepszy pomysł, żeby były klikalne skoro i tak ich nie widać...?) -->
+            <input class="contact-form__field contact-form__field_half" type="text" name="fullName" id="fullName" placeholder="Imię i nazwisko*"
+                required>
+            <!-- może jakaś mała walidacja? + sprawdzić czy atrybut title działa lub czy da się wpisać spersonalizowany komunikat -->
+
+            <label for="phoneNumber" class="screen-reader-only">Numer telefonu</label>
+            <!-- jw -->
+            <input class="contact-form__field contact-form__field_half" type="tel" name="phoneNumber" id="phoneNumber" placeholder="Nr telefonu">
+            <!-- zastosować tutaj pattern validation ułatwiający wpisanie numeru telefonu + sprawdzić czy atrybut title działa lub czy da się wpisać spersonalizowany komunikat -->
+
+            <label for="emailAddress" class="screen-reader-only">Adres e-mail</label>
+            <!-- jw -->
+            <input class="contact-form__field contact-form__field_full" type="email" name="emailAddress" id="emailAddress" placeholder="Adres e-mail*"
+                required title="Proszę wpisać poprawny adres e-mail">
+            <!-- sprawdzić tylko czy walidacja wymusza wpisanie znaku '@' + sprawdzić czy atrybut title działa lub czy da się wpisać spersonalizowany komunikat -->
+
+            <label for="message" class="screen-reader-only">Treść wiadomości</label>
+            <!-- jw -->
+            <textarea class="contact-form__field contact-form__field_full contact-form__textarea" name="message" id="message" placeholder="Treść wiadomości...*"
+                required></textarea>
+            <!-- może jakaś mała walidacja, np. na minimalną liczbę znaków, ze spersonalizowanym komunikatem w razie niepowodzenia walidacji -->
+        </div>
+
+        <p class="contact-form__required-info">* pole wymagane</p>
+        
+        <input type="text" name="_gotcha" style="display:none" />
+        <input type="hidden" name="_next" value="//ksiegowawwesolej.pl" />
+        <input type="hidden" name="_language" value="pl" />
+        <input class="btn btn-form" type="submit" value="Wyślij">
+    </form>
+
+    <!-- UWAGA!!! - sprawdzić czy poniższe dane teleadresowe nie powinny być w znaczniku <address> -->
+
+    <h3 class="contact-form__header">Dane teleadresowe</h3>
     <div class="contact-section__contact-header">
         <span class="icon fa-map-marker contact-section__icon"></span>
-        <h3 class="contact-section__contact-title">Adres</h3>
+        <h4 class="contact-section__contact-title">Adres</h4>
     </div>
     <!-- TODO wszystko opisać zgodnie z semantyką + MICRODATA zgodnie z zaleceniami Google!!! -->
     <span class="contact-section__text">Usługi Księgowe Krystyna Szymczak</span>
@@ -141,56 +287,21 @@ layout: home
     <!-- TODO numer telefonu też opisać zgodnie z semantyką + MICRODATA zgodnie z zaleceniami Google!!! -->
     <div class="contact-section__contact-header">
         <span class="icon fa-phone contact-section__icon"></span>
-        <h3 class="contact-section__contact-title">Telefon</h3>
+        <h4 class="contact-section__contact-title">Telefon</h4>
     </div>
     <span class="contact-section__text"><a href="tel:+48507625453">507-625-453</a></span>
 
     <!-- TODO adres e-mail też opisać zgodnie z semantyką + MICRODATA zgodnie z zaleceniami Google!!! -->
     <div class="contact-section__contact-header">
         <span class="icon fa-envelope-o contact-section__icon"></span>
-        <h3 class="contact-section__contact-title">E-mail</h3>
+        <h4 class="contact-section__contact-title">E-mail</h4>
     </div>
     <span class="contact-section__text"><a href="mailto:biuro.kszymczak@gmail.com">biuro.kszymczak@gmail.com</a></span>
 
     <section>
-        <h3 class="screen-reader-only">Mapa dojazdu</h3>
+        <h4 class="screen-reader-only">Mapa dojazdu</h4>
 
         <div id="js-contact-form__map" class="contact-form__map"></div>
         <!-- zastanowić się czy tutaj div czy jakiś inny znacznik, np. section lub figure dla mapki -->
     </section>
-
-    <form id="formaction" method="POST" class="contact-form">
-        <h3 class="contact-form__header">Formularz kontaktowy</h3>
-
-        <div class="contact-form__content">
-            <label for="fullName" class="screen-reader-only">Imię i nazwisko</label>
-            <!-- widoczne tylko dla czytników (hmmm... ale czy to najlepszy pomysł, żeby były klikalne skoro i tak ich nie widać...?) -->
-            <input class="contact-form__field contact-form__field_half" type="text" name="fullName" id="fullName" placeholder="Imię i nazwisko"
-                required>
-            <!-- może jakaś mała walidacja? + sprawdzić czy atrybut title działa lub czy da się wpisać spersonalizowany komunikat -->
-
-            <label for="phoneNumber" class="screen-reader-only">Numer telefonu</label>
-            <!-- jw -->
-            <input class="contact-form__field contact-form__field_half" type="tel" name="phoneNumber" id="phoneNumber" placeholder="Nr telefonu"
-                required>
-            <!-- zastosować tutaj pattern validation ułatwiający wpisanie numeru telefonu + sprawdzić czy atrybut title działa lub czy da się wpisać spersonalizowany komunikat -->
-
-            <label for="emailAddress" class="screen-reader-only">Adres e-mail</label>
-            <!-- jw -->
-            <input class="contact-form__field contact-form__field_full" type="email" name="emailAddress" id="emailAddress" placeholder="Adres e-mail"
-                required title="Proszę wpisać poprawny adres e-mail">
-            <!-- sprawdzić tylko czy walidacja wymusza wpisanie znaku '@' + sprawdzić czy atrybut title działa lub czy da się wpisać spersonalizowany komunikat -->
-
-            <label for="message" class="screen-reader-only">Treść wiadomości</label>
-            <!-- jw -->
-            <textarea class="contact-form__field contact-form__field_full contact-form__textarea" name="message" id="message" placeholder="Treść wiadomości..."
-                required></textarea>
-            <!-- może jakaś mała walidacja, np. na minimalną liczbę znaków, ze spersonalizowanym komunikatem w razie niepowodzenia walidacji -->
-        </div>
-        
-        <input type="text" name="_gotcha" style="display:none" />
-        <input type="hidden" name="_next" value="//ksiegowawwesolej.pl" />
-        <input type="hidden" name="_language" value="pl" />
-        <input class="btn btn-form" type="submit" value="Wyślij">
-    </form>
 </section>

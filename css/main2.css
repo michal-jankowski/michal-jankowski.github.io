@@ -347,12 +347,12 @@ hero section _ header
 *****************************************/
 
 .hero-section {
-    min-height: 550px;
-    max-height: 650px;
-    background: #f1f2f6;
+    position: relative;
+    background: #6dabb6;
 }
 
 .hero-section__image-container {
+    padding: 0 4%;
     text-align: center;
 }
 
@@ -390,19 +390,15 @@ hero section _ header
     }
 }
 
-@media screen and (min-width: 992px) {
+@media screen and (min-width: 1000px) {
     .hero-section__image {
-        min-height: 400px;
+        max-height: 350px;
     }
+}
 
-    .hero-section__title,
-    .hero-section__btn {
-        position: relative;
-        margin-top: -100px;
-    }
-    
-    .hero-section__btn {
-        top: 28px;
+@media screen and (min-width: 1200px) {
+    .hero-section__image {
+        max-height: 400px;
     }
 }
 
@@ -512,7 +508,7 @@ contact section
 
 .contact-form__header {
     text-transform: uppercase;
-    font-size: 1.05rem;
+    font-size: 1.3rem;
     margin: 2.6em 0 0.5em 5px;
 }
 
@@ -528,7 +524,7 @@ contact section
     border: 1px solid #e8e8e8;
     min-width: 200px;
     background-color: #f9f9f9;
-    font-size: 0.875rem;
+    font-size: 1rem;
     font-family: 'PT Sans', sans-serif;
 }
 
@@ -543,6 +539,11 @@ contact section
 .contact-form__textarea {
     min-height: 150px;
     margin-bottom: 10px;
+}
+
+.contact-form__required-info {
+    margin: -5px 5px 0.7rem;
+    font-size: 15px;
 }
 
 .contact-form__map {
@@ -773,14 +774,6 @@ BASE.CSS file
     transition: color 0.3s;
 }
 
-.accordion-element:hover .accordion-element__title {
-    color: #ffa000;
-}
-
-.accordion-element__checkbox:not(:checked) ~ .accordion-element__title {
-    color: #ffa000;
-}
-
 .accordion-element__icon {
 	position: absolute;
 	transform: translate(-1em, 0);
@@ -873,4 +866,64 @@ SWEETALERTS modal
 .swal-button--confirm:active {
     outline: none;
     box-shadow: 0 6px 5px -5px #aaaaaa;
+}
+
+
+/***********************************************************
+pricing section
+***********************************************************/
+/* 
+Generic Styling, for Desktops/Laptops 
+*/
+
+.pricing-section-noVAT,
+.pricing-section-VAT {
+    margin-bottom: 1.5rem;
+}
+
+.pricing-table-noVAT,
+.pricing-table-VAT { 
+    width: 100%; 
+    border-collapse: collapse; 
+}
+
+.pricing-table-noVAT caption,
+.pricing-table-VAT caption {
+    font-weight: bold;
+    text-align: left;
+    padding: 5px 0;
+}
+
+/* Zebra striping */
+.pricing-table-noVAT tr:nth-of-type(odd),
+.pricing-table-VAT tr:nth-of-type(odd) { 
+    background: #f1f2f6; 
+}
+
+.pricing-table-noVAT th,
+.pricing-table-VAT th { 
+    background: #333; 
+    color: white; 
+    font-weight: bold; 
+}
+
+.pricing-table-noVAT td,
+.pricing-table-noVAT th,
+.pricing-table-VAT td,
+.pricing-table-VAT th { 
+    padding: 6px; 
+    border: 1px solid #cccccc; 
+    text-align: left; 
+}
+
+@media screen and (max-width: 575px) {
+    .pricing-table-noVAT,
+    .pricing-table-VAT {
+        font-size: 14px;
+    }
+
+    .pricing-table-noVAT caption,
+    .pricing-table-VAT caption {
+        font-size: 1rem;
+    }
 }
